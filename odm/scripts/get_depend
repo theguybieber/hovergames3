@@ -1,5 +1,6 @@
 #!/bin/bash
 
 pushd ./depend
-    git clone https://github.com/OpenDroneMap/CloudODM
+    git clone https://github.com/OpenDroneMap/ODM
+    #git clone https://github.com/OpenDroneMap/CloudODM
 popd
