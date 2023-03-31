@@ -139,14 +139,3 @@ ping 10.0.0.2
 ```
 works [directions](https://docs.px4.io/main/en/advanced_config/ethernet_setup.html)
 
-
-## AI
-/usr/bin/tensorflow-lite-2.6.0/
-
-USE_GPU_INFERENCE=0 ./label_image --external_delegate_path=/lib/libvx_delegate.so -m mobilenet_v1_1.0_224_quant.tflite -i grace_hopper.bmp -l labels.txt
-USE_GPU_INFERENCE=0 specifies that we want to run inference on the NPU. Removing this environment variable will run inference on the GPU.
-
-
-## ROS2 Humble
-installed in /opt/ros
-
