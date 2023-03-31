@@ -1,0 +1,17 @@
+# /bin/bash
+
+pushd ./depend
+    # get the uuu boatloader for mac
+    wget https://github.com/nxp-imx/mfgtools/releases/download/uuu_1.5.21/uuu_mac
+    chmod u+x uuu_mac
+
+    mkdir ubuntu_22.04.2_humble
+    pushd ubuntu_22.04.2_humble
+        # hovergames navqplus software
+        echo "check for newer releases here: https://github.com/rudislabs/navqplus-create3-images/releases"
+        wget https://github.com/rudislabs/navqplus-create3-images/releases/download/v22.04.2/navqplus-image-22.04-230127.bin-flash_evk
+        wget https://github.com/rudislabs/navqplus-create3-images/releases/download/v22.04.2/navqplus-image-22.04-230127.wic.bz2
+        wget https://github.com/rudislabs/navqplus-create3-images/releases/download/v22.04.2/uuu
+        #gh release download v22.04.2 -R https://github.com/rudislabs/navqplus-create3-images/releases
+    popd
+popd 

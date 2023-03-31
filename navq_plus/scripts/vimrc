@@ -1,0 +1,11 @@
+source $VIMRUNTIME/defaults.vim
+syntax on
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set autoindent
+set nosmartindent
+set cindent 
+set cinkeys-=0#
+set indentkeys-=0#
+

@@ -1,0 +1,15 @@
+# udevadm info -a -n /dev/bus/usb/001/002 | grep '{serial}' | head -n1
+# udevadm info -a -n /dev/bus/usb/001/002 | grep '{idVendor}' | head -n1
+# udevadm info -a -n /dev/bus/usb/001/002 | grep '{idProduct}' | head -n1
+# udevadm control --reload-rules
+# udevadm trigger
+# i2c-0
+# SUBSYSTEM=="i2c_dev", ATTR{name}=="30a20000.i2c" MODE="0666"
+# i2c-1
+# SUBSYSTEM=="i2c_dev", ATTR{name}=="30a30000.i2c" MODE="0666"
+# i2c-2
+# SUBSYSTEM=="i2c_dev", ATTR{name}=="30a40000.i2c" MODE="0666"
+# i2c-3
+# SUBSYSTEM=="i2c_dev", ATTR{name}=="30a50000.i2c" MODE="0666"
+# i2c-5
+KERNELS=="i2c-5", SUBSYSTEMS=="i2c", ATTRS{name}=="30ae0000.i2c", MODE="0666"

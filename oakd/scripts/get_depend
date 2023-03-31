@@ -1,0 +1,27 @@
+#!/bin/bash
+
+pushd ./depend
+  
+  # install dependencies 
+  sudo wget -qO- https://raw.githubusercontent.com/luxonis/depthai-ros/main/install_dependencies.sh | sudo bash
+  sudo apt install -y libopencv-dev
+
+  # the main thing
+  git clone https://github.com/luxonis/depthai-ros
+
+  # new experiments 
+  git clone https://github.com/luxonis/depthai-experiments
+
+  # unity integration
+  git clone https://github.com/luxonis/depthai-unity
+
+  # demo client program
+  #git clone https://github.com/luxonis/depthai
+
+  # c++ sdk
+  #git clone https://github.com/luxonis/depthai-core
+
+  # python sdk 
+  git clone https://github.com/luxonis/depthai-python
+  
+popd 

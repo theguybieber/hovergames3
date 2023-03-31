@@ -1,0 +1,30 @@
+#!/bin/bash
+# This pulls the latest dependencies without tracking them by using gitignore.
+mkdir -p depend
+pushd depend
+
+    # PX4-Autopilot FMU software
+    git clone https://github.com/PX4/PX4-Autopilot --recursive 
+    # NOTE DONT do this unless you have save any source out.
+    cp depend/PX4-Autopilot/Tools/mavlink_shell.py scripts
+
+    # get the older fmuk66_v3 software (pre 2022)
+    mkdir -p fmuk66_v3
+    pushd fmuk66_v3
+        wget http://ci.px4.io/job/PX4_misc/job/Firmware-compile/job/stable/lastSuccessfulBuild/artifact/build/nxp_fmuk66-v3_default/nxp_fmuk66-v3_default.bin
+        wget http://ci.px4.io/job/PX4_misc/job/Firmware-compile/job/stable/lastSuccessfulBuild/artifact/build/nxp_fmuk66-v3_default/nxp_fmuk66-v3_default.elf    
+        wget http://ci.px4.io/job/PX4_misc/job/Firmware-compile/job/stable/lastSuccessfulBuild/artifact/build/nxp_fmuk66-v3_default/nxp_fmuk66-v3_default.px4
+        wget https://github.com/PX4/PX4-Autopilot/raw/main/boards/nxp/fmuk66-v3/extras/nxp_fmuk66-v3_bootloader.bin
+    popd
+
+    # get the fmuk66_e software 
+    mkdir -p fmuk66_e
+    pushd fmuk66_e
+        wget http://ci.px4.io/job/PX4_misc/job/Firmware-compile/job/stable/lastSuccessfulBuild/artifact/build/nxp_fmuk66-e_default/nxp_fmuk66-e_default.bin
+        wget http://ci.px4.io/job/PX4_misc/job/Firmware-compile/job/stable/lastSuccessfulBuild/artifact/build/nxp_fmuk66-e_default/nxp_fmuk66-e_default.elf
+        wget http://ci.px4.io/job/PX4_misc/job/Firmware-compile/job/stable/lastSuccessfulBuild/artifact/build/nxp_fmuk66-e_default/nxp_fmuk66-e_default.px4
+        wget https://github.com/PX4/PX4-Autopilot/blob/main/boards/nxp/fmuk66-e/extras/nxp_fmuk66-e_bootloader.bin
+    popd
+
+popd
+~

@@ -1,0 +1,7 @@
+#!/bin/bash
+# to get px4 to try to send data you need 
+# mavlink start -x -u 14551 -o 14551 -r 200000 -t 10.0.0.1
+
+python3 /usr/share/droidz/scripts/mavlink_shell.py 0.0.0.0:14551
+
+

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+pushd depend/bme680-python/examples
+    sudo chmod a+rw /dev/i2c-5
+    python3 read-all.py
+popd
+

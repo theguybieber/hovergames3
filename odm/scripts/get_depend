@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pushd ./depend
+    git clone https://github.com/OpenDroneMap/CloudODM
+popd

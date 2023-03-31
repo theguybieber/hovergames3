@@ -1,0 +1,16 @@
+#!/bin/bash
+
+FLASH_TARGET=depend/ubuntu_22.04.2_humble
+VERSION_TARGET=22.04-230127
+EVK_FILE=${FLASH_TARGET}/navqplus-image-${VERSION_TARGET}.bin-flash_evk
+WIC_FILE=${FLASH_TARGET}/navqplus-image-${VERSION_TARGET}.wic 
+echo "${EVK_FILE}"
+echo "${WIC_FILE}"
+
+sudo depend/uuu_mac -lsusb
+sudo depend/uuu_mac -b emmc_all ${EVK_FILE} ${WIC_FILE}
+
+# libusb on mac for flash to work
+# brew unlink libusb
+# brew install --head libusb
+
